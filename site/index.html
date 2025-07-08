@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Docker God</title>
+  <style>
+    body {
+      background: linear-gradient(135deg, #0f0, #00f, #f0f, #0ff);
+      background-size: 400% 400%;
+      animation: gradient 15s ease infinite;
+      color: #fff;
+      font-family: monospace;
+      text-align: center;
+      padding-top: 10%;
+    }
+    @keyframes gradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+      transition: color 0.3s;
+    }
+    .links {
+      margin-top: 30px;
+      font-size: 1.2em;
+    }
+    .links a {
+      color: #fff;
+      text-decoration: none;
+      display: block;
+      margin: 5px 0;
+      transition: color 0.3s;
+    }
+    .links a:hover {
+      color: #0f0;
+    }
+  </style>
+</head>
+<body>
+  <h1 id="message"></h1>
+  <div class="links">
+    <a href="https://www.youtube.com/watch?v=GJJWAI3J6nE" target="_blank">😆 Programmers are weird</a>
+    <a href="https://www.youtube.com/watch?v=BKorP55Aqvg" target="_blank">🤓 The Expert</a>
+    <a href="https://www.youtube.com/watch?v=HluANRwPyNo" target="_blank">🐳 Docker Parody</a>
+  </div>
+
+  <script>
+    const messages = [
+      "You're a Docker god! 🐳",
+      "Ești un zeu al containerelor!1 🚀",
+      "Contenează realitatea. 🤯",
+      "Nici Kubernetes nu te ține-n frâu! 👑",
+      "Push, pull, pray 🙏",
+      "Ai montat și volumul sufletului. ❤️",
+      "RUN echo 'master of docker'",
+      "Și Nginx te roagă pentru config.",
+      "Debugging? It's just adding more print()s.",
+      "I turn coffee into containers.",
+      "Yes, I have a volume for my feelings."
+    ];
+
+    const colors = [
+      "#ff00ff", // fuchsia
+      "#00ffff", // aqua
+      "#00ff00", // lime
+      "#ffff00", // yellow
+      "#ff9900", // orange
+      "#ffffff", // white
+      "#ff0000"  // red
+    ];
+
+    const messageEl = document.getElementById("message");
+
+    function newMessage() {
+      const m = messages[Math.floor(Math.random() * messages.length)];
+      const c = colors[Math.floor(Math.random() * colors.length)];
+      messageEl.textContent = m;
+      messageEl.style.color = c;
+    }
+
+    // Show first message immediately
+    newMessage();
+
+    // Change message every 3 seconds
+    setInterval(newMessage, 3000);
+  </script>
+</body>
+</html>
+
